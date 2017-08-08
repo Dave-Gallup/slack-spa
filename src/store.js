@@ -63,6 +63,29 @@ function storeReducer(state: State, action): State {
         ...state,
         channelData: newChannelData,
       };
+    case 'RECEIVED_NEW_MESSAGES':
+    // assume that messages looks like this...
+    // messages: {
+    //  'C1111' : {
+    //      'M1111': {}
+    //   }
+    // }
+
+    console.log('actions.messages', action.messages);
+      // newChannelData = {...state.channelData};
+      //
+      // Object.keys(action.messages).forEach(channelId => {
+      // newChannelData[channelId] = {...newChannelData[channelId]};
+      // Object.keys(action.messages[channelId]).forEach(messageId => {
+      //     newChannelData[channelId][messageId] = action.messages[channelId][messageId];
+      //   });
+      // });
+      //
+      // return {
+      //   ...state,
+      //   channelData: newChannelData,
+      // };
+
     case 'RECEIVED_SCORE_FOR_MESSAGES':
       const newScoreData = {...state.scoreData};
       newScoreData[action.channel] = action.score;

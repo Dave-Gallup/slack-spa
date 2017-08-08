@@ -32,8 +32,42 @@ const Actions = {
     };
   },
 
+  processNewMessages(newMessageData: {}) {
+
+      // Mark that we have messages to avoid fetching multiple times.
+      return {
+        messages: newMessageData,
+        type: 'RECEIVED_NEW_MESSAGES',
+      };
+
+
+
+      // switch (channel) {
+      //   case '#random':
+      //     messages = {
+      //       12345: {
+      //         "id": 12345,
+      //         "text": "Make it so!",
+      //         "avatarImage": "Picard",
+      //         "name": "Captain Picard",
+      //         "timestamp": "2017-08-01"
+      //       },
+      //     };
+      //     break;
+      //   case '#general':
+      //     messages = fakeMessages;
+      //     break;
+      //   case '#redux':
+      //     messages = fakeMessages;
+      //     break;
+      // }
+
+
+  //  };
+  },
+
   fetchMessagesForChannel(channel: string) {
-    return async function(dispatch: Dispatch, getState: GetState) {
+   return async function(dispatch: Dispatch, getState: GetState) {
       const oldMessages = getState().channelData[channel];
       if (oldMessages) {
         // Don't fetch again if we already have messages.
@@ -77,7 +111,7 @@ const Actions = {
         messages,
         type: 'RECEIVED_MESSAGES_FOR_CHANNEL',
       });
-    };
+   };
   },
 
   selectChannel(channel: string) {

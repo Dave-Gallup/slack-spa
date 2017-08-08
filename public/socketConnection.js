@@ -1,15 +1,15 @@
 /* eslint-disable */
+const { processNewMessages } = require('../src/Actions');
 
 const socket = io.connect('localhost:4000');
-// const socket = io.connect('https://a1f02bbc.ngrok.io/');
+// const socket = io.connect('https://databraid.localtunnel.me/');
 
 const data = {};
 
 socket.on('messages', (messages) => {
-  console.log(messages);
+  // console.log(messages);
   // this should dispatch an action
-  data.messages = messages;
-  //processMessages(data);
+  processNewMessages(messages);
 });
 
 socket.on('score', (score) => {
