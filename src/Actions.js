@@ -34,36 +34,11 @@ const Actions = {
 
   processNewMessages(newMessageData: {}) {
 
-      // Mark that we have messages to avoid fetching multiple times.
-      return {
-        messages: newMessageData,
-        type: 'RECEIVED_NEW_MESSAGES',
-      };
-
-
-
-      // switch (channel) {
-      //   case '#random':
-      //     messages = {
-      //       12345: {
-      //         "id": 12345,
-      //         "text": "Make it so!",
-      //         "avatarImage": "Picard",
-      //         "name": "Captain Picard",
-      //         "timestamp": "2017-08-01"
-      //       },
-      //     };
-      //     break;
-      //   case '#general':
-      //     messages = fakeMessages;
-      //     break;
-      //   case '#redux':
-      //     messages = fakeMessages;
-      //     break;
-      // }
-
-
-  //  };
+    // Mark that we have messages to avoid fetching multiple times.
+    return {
+      messages: newMessageData,
+      type: 'RECEIVED_NEW_MESSAGES',
+    };
   },
 
   fetchMessagesForChannel(channel: string) {

@@ -71,7 +71,8 @@ function storeReducer(state: State, action): State {
     //   }
     // }
 
-    console.log('actions.messages', action.messages);
+    console.log('action.messages', action.messages);
+    return state;
       // newChannelData = {...state.channelData};
       //
       // Object.keys(action.messages).forEach(channelId => {

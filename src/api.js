@@ -1,6 +1,11 @@
-// import openSocket from 'socket.io-client';
-// const socket = openSocket('http://localhost:4000');
-//
+import openSocket from 'socket.io-client';
+const socket = openSocket('https://databraid.localtunnel.me');
+
+
+socket.on('messages', (messages) => {
+  console.log(messages);
+});
+//;
 //
 // function subscribeToInfo(cb) {
 //   socket.on('message', data => cb(null, data.channelId));
